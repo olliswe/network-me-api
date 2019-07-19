@@ -9,7 +9,7 @@ class CategorySerializer(serializers.ModelSerializer):
         fields = ('name',)
 
 class UserSerializer(serializers.ModelSerializer):
-    category = CategorySerializer()
+    category = CategorySerializer(required=False)
     class Meta:
         model = User
         fields = ('id','email', 'first_name', 'last_name', 'organization', 'category', 'date_added', 'password')
