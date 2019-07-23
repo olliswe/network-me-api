@@ -7,10 +7,10 @@ from .forms import UserAdminCreationForm, UserAdminChangeForm
 from .models import User, Category
 
 
-# class CategoryAdmin(admin.ModelAdmin):
-#     list_display = ('id','name')
-#     list_display_links = ('id','name',)
-#     list_per_page = 25
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('id','name')
+    list_display_links = ('id','name',)
+    list_per_page = 25
 #
 # class UserAdmin(BaseUserAdmin):
 #     # The forms to add and change user instances
@@ -42,7 +42,7 @@ from .models import User, Category
 
 
 admin.site.register(User)
-admin.site.register(Category)
+admin.site.register(Category, CategoryAdmin)
 
 
 # Remove Group Model from admin. We're not using it.

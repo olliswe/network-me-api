@@ -6,11 +6,13 @@ from rest_framework.viewsets import ModelViewSet
 from .serializers import UserSerializer
 from .permissions import IsAdminUser, IsLoggedInUserOrAdmin
 from rest_framework.permissions import AllowAny
+from rest_framework_jwt.settings import api_settings
 
 
 class UserViewSet(ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
 
     # Add this code block
     def get_permissions(self):
@@ -22,6 +24,27 @@ class UserViewSet(ModelViewSet):
         elif self.action == 'list' or self.action == 'destroy':
             permission_classes = [IsAdminUser]
         return [permission() for permission in permission_classes]
+
+    def create_token(self,user):
+        jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
+        jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
+
+        payload = jwt_payload_handler(user)
+        token = jwt_encode_handler(payload)
+
+        return token
+
+    def create(self, request):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        user = serializer.save()
+
+        return Response({
+            "user": UserSerializer(user, context=self.get_serializer_context()).data,
+            "token": self.create_token(user)
+        })
+
+
 
 
 @api_view(['GET'])

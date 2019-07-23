@@ -6,18 +6,20 @@ from accounts.models import User, Category
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ('name',)
+        fields = ('name')
+
 
 class UserSerializer(serializers.ModelSerializer):
-    category = CategorySerializer(required=False)
     class Meta:
         model = User
-        fields = ('id','email', 'first_name', 'last_name', 'organization', 'category', 'date_added', 'password')
+        fields = ('id','email', 'first_name', 'last_name', 'organization','date_added', 'password', 'category')
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
         password = validated_data.pop('password')
         user = User(**validated_data)
+        # category = Category.objects.get(name=validated_data.pop('category'))
+        # user.category =
         user.set_password(password)
         user.save()
         return user
@@ -29,7 +31,6 @@ class UserSerializer(serializers.ModelSerializer):
         instance.organization = validated_data.get('organization', instance.organization)
         instance.category = validated_data.get('category',instance.category)
         instance.save()
-
         return instance
 
 
