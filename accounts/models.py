@@ -60,6 +60,7 @@ class User(AbstractBaseUser):
     first_name = models.CharField(max_length = 225, verbose_name="First Name", null=True, blank=True)
     last_name = models.CharField(max_length=225, verbose_name="Last Name", null=True, blank=True)
     organization = models.CharField(max_length=225, verbose_name="Organization Name", null=True, blank=True)
+    telephone_number = models.CharField(max_length=225, verbose_name="Telephone Number", null=True, blank=True)
     category = models.ForeignKey(Category, verbose_name = "User Category", on_delete=models.CASCADE, null=True, blank=True)
     date_added = models.DateTimeField(auto_now_add=True,)
     avatar = models.ImageField(verbose_name='Avatar', default='avatars/placeholder.png', upload_to='avatars/', null=True, blank=True)
@@ -103,8 +104,6 @@ class User(AbstractBaseUser):
     def is_active(self):
         "Is the user active?"
         return self.active
-
-
 
 
 

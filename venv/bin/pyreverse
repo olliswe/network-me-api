@@ -1,4 +1,4 @@
-#!/home/oliver/PycharmProjects/sl_job_board_api/venv/bin/python3.6
+#!/home/oliver/Projects/sl_job_board_api/venv/bin/python3.6
 # -*- coding: utf-8 -*-
 import re
 import sys

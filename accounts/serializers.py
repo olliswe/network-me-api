@@ -12,14 +12,12 @@ class CategorySerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id','email', 'first_name', 'last_name', 'organization','date_added', 'password', 'category')
+        fields = ('id','email', 'first_name', 'last_name', 'organization','date_added', 'password', 'category','telephone_number')
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
         password = validated_data.pop('password')
         user = User(**validated_data)
-        # category = Category.objects.get(name=validated_data.pop('category'))
-        # user.category =
         user.set_password(password)
         user.save()
         return user

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import datetime
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -44,7 +45,9 @@ INSTALLED_APPS = [
     'accounts',
     'rest_framework.authtoken',
     'rest_auth',
+    'randomslugfield',
 ]
+
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -60,6 +63,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'sl_job_board_api.urls'
+
+
 
 TEMPLATES = [
     {
@@ -89,7 +94,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'sl_job_board',
         'USER': 'postgres',
-        'PASSWORD': '',
+        'PASSWORD': 'kahn1995',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
@@ -127,13 +132,22 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ),
+    'DATETIME_FORMAT': "iso-8601",
+    'JWT_REFRESH_EXPIRATION_DELTA' : datetime.timedelta(days=7),
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),
+
 }
+
+
+
+
 
 REST_USE_JWT = True
 
 REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'accounts.serializers.UserSerializer',
 }
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/

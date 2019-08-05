@@ -1,4 +1,4 @@
-#!/home/oliver/PycharmProjects/sl_job_board_api/venv/bin/python
+#!/home/oliver/Projects/sl_job_board_api/venv/bin/python
 # EASY-INSTALL-ENTRY-SCRIPT: 'pip==19.0.3','console_scripts','pip3'
 __requires__ = 'pip==19.0.3'
 import re
