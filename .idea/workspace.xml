@@ -2,40 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89cab35f-2391-4b3f-86f8-2de22e4a05a3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sl_job_board_api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sl_job_board_api.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/search_indexes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/db_seed.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sl_job_board_api/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/sl_job_board_api/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sl_job_board_api/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/sl_job_board_api/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/activate" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/activate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/activate.csh" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/activate.csh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/activate.fish" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/activate.fish" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/django-admin" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/django-admin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/django-admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/django-admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/easy_install" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/easy_install" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/easy_install-3.6" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/easy_install-3.6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/epylint" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/epylint" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/isort" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/isort" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/markdown_py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/markdown_py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/pip" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/pip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/pip3" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/pip3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/pip3.6" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/pip3.6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/pyjwt" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/pyjwt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/pylint" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/pylint" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/pyreverse" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/pyreverse" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/sqlformat" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/sqlformat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/symilar" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/symilar" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -144,7 +111,9 @@
       <workItem from="1564227569173" duration="12668000" />
       <workItem from="1564505478180" duration="13914000" />
       <workItem from="1564590789721" duration="5645000" />
-      <workItem from="1564672591740" duration="43092000" />
+      <workItem from="1564672591740" duration="43770000" />
+      <workItem from="1565075326115" duration="946000" />
+      <workItem from="1565123170763" duration="1724000" />
     </task>
     <servers />
   </component>
