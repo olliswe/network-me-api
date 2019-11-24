@@ -3,6 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="89cab35f-2391-4b3f-86f8-2de22e4a05a3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sl_job_board_api/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/sl_job_board_api/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sl_job_board_api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/sl_job_board_api/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,11 +31,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1731" />
-    <option name="width" value="297" />
-    <option name="height" value="1032" />
-  </component>
   <component name="ProjectId" id="1Oacz0nfqtjSIZB3nDtKSjfp9hS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
@@ -39,7 +42,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -113,7 +116,42 @@
       <workItem from="1564590789721" duration="5645000" />
       <workItem from="1564672591740" duration="43770000" />
       <workItem from="1565075326115" duration="946000" />
-      <workItem from="1565123170763" duration="1724000" />
+      <workItem from="1565123170763" duration="2573000" />
+      <workItem from="1565182171417" duration="989000" />
+      <workItem from="1565350781368" duration="604000" />
+      <workItem from="1565361427443" duration="1351000" />
+      <workItem from="1565379279769" duration="6753000" />
+      <workItem from="1565689143266" duration="701000" />
+      <workItem from="1565693402267" duration="1022000" />
+      <workItem from="1565711923390" duration="613000" />
+      <workItem from="1565712901675" duration="614000" />
+      <workItem from="1565765713568" duration="804000" />
+      <workItem from="1565814408445" duration="443000" />
+      <workItem from="1565959145129" duration="1157000" />
+      <workItem from="1567241387634" duration="2071000" />
+      <workItem from="1567621830475" duration="3005000" />
+      <workItem from="1567667310743" duration="19601000" />
+      <workItem from="1568619359091" duration="121000" />
+      <workItem from="1570191237675" duration="987000" />
+      <workItem from="1570273388924" duration="47000" />
+      <workItem from="1570434671316" duration="646000" />
+      <workItem from="1570462026730" duration="9000" />
+      <workItem from="1570482107520" duration="1711000" />
+      <workItem from="1570564728765" duration="2045000" />
+      <workItem from="1570737093030" duration="679000" />
+      <workItem from="1571071111963" duration="615000" />
+      <workItem from="1571155031024" duration="1370000" />
+      <workItem from="1571570040459" duration="2674000" />
+      <workItem from="1571664549781" duration="709000" />
+      <workItem from="1572091061812" duration="15516000" />
+      <workItem from="1572686738853" duration="6727000" />
+      <workItem from="1572955199266" duration="340000" />
+      <workItem from="1573303837131" duration="10781000" />
+      <workItem from="1573540582962" duration="3082000" />
+      <workItem from="1573589140123" duration="1353000" />
+      <workItem from="1573985197348" duration="7243000" />
+      <workItem from="1574247086228" duration="699000" />
+      <workItem from="1574591227147" duration="671000" />
     </task>
     <servers />
   </component>
@@ -171,7 +209,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/api/models.py</url>
-          <line>45</line>
+          <line>44</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

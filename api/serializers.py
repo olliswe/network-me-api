@@ -1,79 +1,169 @@
-from rest_framework.serializers import ModelSerializer, StringRelatedField, \
-    PrimaryKeyRelatedField, BooleanField, ReadOnlyField, Field, FilePathField, SerializerMethodField
+from rest_framework.serializers import (
+    ModelSerializer,
+    StringRelatedField,
+    PrimaryKeyRelatedField,
+    BooleanField,
+    ReadOnlyField,
+    RelatedField,
+    Field,
+    FilePathField,
+    SerializerMethodField,
+)
 
-from .models import Job, Application
+from .models import Job, Application, ApplicationAttachment, Message
 from accounts.serializers import UserSerializer
+
 # from .search_indexes import JobIndex
 
 
+class ApplicationAttachmentSerializer(ModelSerializer):
+    class Meta:
+        model = ApplicationAttachment
+        fields = "__all__"
 
 
+class SimpleJobSerializer(ModelSerializer):
+    class Meta:
+        model = Job
+        fields = ("id", "title", "slug")
 
 
 class JobSerializer(ModelSerializer):
     applications = PrimaryKeyRelatedField(many=True, read_only=True)
+
     class Meta:
         model = Job
         fields = (
-        'id','post_date', 'deadline', 'title', 'description', 'manually_closed', 'employer', 'applications'
+            "id",
+            "post_date",
+            "deadline",
+            "title",
+            "description",
+            "manually_closed",
+            "employer",
+            "applications",
         )
 
 
+class ApplicationJobSerializer(ModelSerializer):
+    employer = UserSerializer()
+    deadline = ReadOnlyField(source="format_deadline")
+    closed = ReadOnlyField(source="is_closed")
+
+    class Meta:
+        model = Job
+        fields = (
+            "id",
+            "post_date",
+            "deadline",
+            "title",
+            "description",
+            "employer",
+            "slug",
+            "closed",
+        )
 
 
 class EmployerJobSerializer(ModelSerializer):
     post_date = ReadOnlyField(source="get_timesince_post")
-    timed_out = ReadOnlyField(source='is_timed_out')
-    deadline = ReadOnlyField(source="format_deadline")
+    timed_out = ReadOnlyField(source="is_timed_out")
+    formatted_deadline = ReadOnlyField(source="format_deadline")
     applications = PrimaryKeyRelatedField(many=True, read_only=True)
+
     class Meta:
         model = Job
         fields = (
-        'id','post_date', 'deadline', 'title', 'description', 'employer', 'applications', 'slug','timed_out',
-        'manually_closed'
+            "id",
+            "post_date",
+            "deadline",
+            "title",
+            "description",
+            "employer",
+            "applications",
+            "slug",
+            "timed_out",
+            "manually_closed",
+            "formatted_deadline",
         )
-
 
 
 class JobSeekerJobSerializer(ModelSerializer):
     applied = BooleanField()
     employer = UserSerializer()
+    timesince_post = ReadOnlyField(source="get_timesince_post")
+    deadline = ReadOnlyField(source="format_deadline")
+    timeuntil_deadline = ReadOnlyField(source="get_time_until_deadline")
+    closed = ReadOnlyField(source="is_closed")
+
     class Meta:
+
         model = Job
         fields = (
-        'id','post_date', 'deadline', 'title', 'description', 'employer','applied'
+            "id",
+            "post_date",
+            "deadline",
+            "title",
+            "description",
+            "employer",
+            "applied",
+            "timesince_post",
+            "timeuntil_deadline",
+            "slug",
+            "closed",
         )
 
 
-
-
-# class JobSeekerJobSearchSerializer(HaystackSerializerMixin, JobSeekerJobSerializer):
-#     class Meta(JobSeekerJobSerializer.Meta):
-# #         search_fields = ("text", "title" )
-#
-# class JobSeekerJobSearchSerializer(HaystackSerializer):
-#     class Meta:
-#       index_classes = [JobIndex]
-#       fields = [
-#          'text', 'title', 'organization'
-#       ]
-
-
 class ApplicationSerializer(ModelSerializer):
-    employer_id = ReadOnlyField(source='get_employer_id')
-    date = ReadOnlyField(source="get_timesince_applied")
+    employer_id = ReadOnlyField(source="get_employer_id")
     author = UserSerializer()
+    job = ApplicationJobSerializer()
+    date = ReadOnlyField(source="format_date")
+    timesince_applied = ReadOnlyField(source="get_timesince_applied")
+
     class Meta:
         model = Application
-        fields = ('id','cv', 'cover_letter', 'author', 'date','job', 'employer_status','slug', 'employer_id')
+        fields = (
+            "id",
+            "cv",
+            "cover_letter",
+            "author",
+            "date",
+            "job",
+            "employer_status",
+            "slug",
+            "employer_id",
+            "timesince_applied",
+        )
 
 
 class GetApplicationSerializer(ModelSerializer):
-    employer_id = ReadOnlyField(source='get_employer_id')
+    employer_id = ReadOnlyField(source="get_employer_id")
     date = ReadOnlyField(source="get_timesince_applied")
     job = EmployerJobSerializer()
     author = UserSerializer()
+    application_attachments = ApplicationAttachmentSerializer(many=True)
+
     class Meta:
         model = Application
-        fields = ('id','cv', 'cover_letter', 'author', 'date','job', 'employer_status','slug', 'employer_id')
+        fields = (
+            "id",
+            "cv",
+            "cover_letter",
+            "author",
+            "date",
+            "job",
+            "employer_status",
+            "slug",
+            "employer_id",
+            "application_attachments",
+        )
 
+
+class MessageSerializer(ModelSerializer):
+    author = UserSerializer()
+    recipient = UserSerializer()
+    job = SimpleJobSerializer()
+
+    class Meta:
+        model = Message
+        fields = "__all__"
