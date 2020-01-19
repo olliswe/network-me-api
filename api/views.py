@@ -12,12 +12,16 @@ from .serializers import (
     EmployerJobSerializer,
     GetApplicationSerializer,
     MessageSerializer,
+    ViewMessageSerializer,
 )
 from django.db.models import Count
 import boto3
 import mimetypes
 from django.conf import settings
 from django.utils import timezone
+from accounts.serializers import UserSerializer
+from rest_framework.authtoken.views import ObtainAuthToken
+from rest_framework.authtoken.models import Token
 
 s3_client = boto3.client(
     "s3",
@@ -25,6 +29,17 @@ s3_client = boto3.client(
     aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
     region_name=settings.S3UPLOAD_REGION,
 )
+
+
+class CustomAuthToken(ObtainAuthToken):
+    def post(self, request, *args, **kwargs):
+        serializer = self.serializer_class(
+            data=request.data, context={"request": request}
+        )
+        serializer.is_valid(raise_exception=True)
+        user = serializer.validated_data["user"]
+        token, created = Token.objects.get_or_create(user=user)
+        return Response({"key": token.key, "user": UserSerializer(instance=user).data})
 
 
 class JobViewSet(viewsets.ModelViewSet):  # handles GETs for many Jobs
@@ -63,7 +78,22 @@ class MessageViewset(viewsets.ModelViewSet):
     queryset = Message.objects.all()
 
     def get_queryset(self):
-        return Message.objects.filter(author=self.request.user)
+        if self.request.GET.get("type", False):
+            type = self.request.GET["type"]
+            if type == "sent":
+                return Message.objects.filter(author=self.request.user)
+            elif type == "inbox":
+                return Message.objects.filter(recipient=self.request.user)
+            else:
+                print("unknown type")
+        else:
+            return Message.objects.all()
+
+    def get_serializer_class(self):
+        if self.request.method == "POST":
+            return MessageSerializer
+        else:
+            return ViewMessageSerializer
 
 
 @api_view(["GET"])

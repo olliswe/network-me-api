@@ -12,6 +12,12 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import datetime
+import environ
+
+env = environ.Env()
+
+environ.Env.read_env()
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,7 +27,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "je41$d6ou2-8ii2d=s@3!!4^dv0=gwy=)s-)$kpuuzz$1i1n(_"
+SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -120,23 +126,10 @@ USE_L10N = True
 USE_TZ = True
 
 
-REST_FRAMEWORK = {
-    "DEFAULT_FILTER_BACKENDS": ("django_filters.rest_framework.DjangoFilterBackend",),
-    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
-    "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework_jwt.authentication.JSONWebTokenAuthentication",
-        "rest_framework.authentication.SessionAuthentication",
-        "rest_framework.authentication.BasicAuthentication",
-    ),
-    "DATETIME_FORMAT": "iso-8601",
-    "JWT_REFRESH_EXPIRATION_DELTA": datetime.timedelta(days=7),
-    "JWT_EXPIRATION_DELTA": datetime.timedelta(days=1),
-}
-
-
-AWS_ACCESS_KEY_ID = "AKIAUF7BG62KAUSD27PB"
-AWS_SECRET_ACCESS_KEY = "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"
-AWS_STORAGE_BUCKET_NAME = "networkmesl"
+#
+AWS_ACCESS_KEY_ID = env("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = env("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = env("AWS_STORAGE_BUCKET_NAME")
 AWS_URL = "https://" + AWS_STORAGE_BUCKET_NAME + ".s3.amazonaws.com/"
 S3UPLOAD_REGION = "eu-central-1"
 
@@ -144,12 +137,6 @@ S3UPLOAD_DESTINATIONS = {
     "cv": {"key": "/"},
     "application_attachment": {"key": "/"},
     "job_attachment": {"key": "/"},
-}
-
-REST_USE_JWT = True
-
-REST_AUTH_SERIALIZERS = {
-    "USER_DETAILS_SERIALIZER": "accounts.serializers.UserSerializer"
 }
 
 

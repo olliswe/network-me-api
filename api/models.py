@@ -4,6 +4,7 @@ from django.utils import timezone, timesince
 from randomslugfield import RandomSlugField
 from django.db.models import Q
 from s3upload.fields import S3UploadField
+from datetime import datetime, timedelta
 
 
 class JobManager(models.Manager):
@@ -140,5 +141,21 @@ class Message(models.Model):
     subject = models.TextField(verbose_name="Subject")
     body = models.TextField(verbose_name="Body")
     read = models.BooleanField(verbose_name="Read", default=False)
+    replied = models.BooleanField(verbose_name="Replied", default=False)
     date = models.DateTimeField(auto_now_add=True)
     job = models.ForeignKey(Job, on_delete=models.SET_NULL, null=True)
+
+    def getDaysAgo(self):
+        if self.date.date() == timezone.now().date():
+            return "Today"
+        elif self.date.date() == timezone.now().date() - timedelta(days=1):
+            return "Yesterday"
+        else:
+            days = timezone.now().date() - self.date.date()
+            return str(days.days) + " days ago"
+
+    def getFormattedDate(self):
+        return self.date.strftime("%d %B %Y, %H:%M %p")
+
+    class Meta:
+        ordering = ("-date",)

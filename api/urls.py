@@ -28,4 +28,5 @@ urlpatterns = [
     # OTHER
     path("s3/sign/", views.sign_s3_upload),
     path("get_messages/", views.get_inbox),
+    path("api-token-auth/", views.CustomAuthToken.as_view()),
 ]

@@ -160,10 +160,20 @@ class GetApplicationSerializer(ModelSerializer):
 
 
 class MessageSerializer(ModelSerializer):
-    author = UserSerializer()
-    recipient = UserSerializer()
-    job = SimpleJobSerializer()
-
     class Meta:
         model = Message
         fields = "__all__"
+
+
+class ViewMessageSerializer(ModelSerializer):
+    author = UserSerializer()
+    recipient = UserSerializer()
+    job = SimpleJobSerializer()
+    formatted_date = ReadOnlyField(source="getFormattedDate")
+    days = ReadOnlyField(source="getDaysAgo")
+
+    class Meta:
+        model = Message
+        fields = [field.name for field in model._meta.fields]
+        fields.append("formatted_date")
+        fields.append("days")

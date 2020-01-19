@@ -2,9 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89cab35f-2391-4b3f-86f8-2de22e4a05a3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/search_indexes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/db_seed.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/db_seed.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sl_job_board_api/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/sl_job_board_api/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sl_job_board_api/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/sl_job_board_api/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.6/site-packages/rest_auth/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.6/site-packages/rest_auth/views.py" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +40,11 @@
   </component>
   <component name="ProjectId" id="1Oacz0nfqtjSIZB3nDtKSjfp9hS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -37,21 +57,12 @@
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/sl_job_board_api" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="sl_job_board_api" type="Python.DjangoServer" factoryName="Django server">
@@ -77,6 +88,18 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -144,6 +167,22 @@
       <workItem from="1573985197348" duration="7243000" />
       <workItem from="1574247086228" duration="699000" />
       <workItem from="1574591227147" duration="2725000" />
+      <workItem from="1575109838269" duration="6907000" />
+      <workItem from="1575209136314" duration="3386000" />
+      <workItem from="1575312322006" duration="7617000" />
+      <workItem from="1575366405447" duration="29000" />
+      <workItem from="1575368682140" duration="75000" />
+      <workItem from="1575801513769" duration="5795000" />
+      <workItem from="1575890664287" duration="109000" />
+      <workItem from="1575967806059" duration="709000" />
+      <workItem from="1577718393568" duration="2307000" />
+      <workItem from="1577873150989" duration="22000" />
+      <workItem from="1577873204071" duration="4000" />
+      <workItem from="1578035719249" duration="69000" />
+      <workItem from="1578691693186" duration="1531000" />
+      <workItem from="1578693246147" duration="1533000" />
+      <workItem from="1578694846421" duration="20000" />
+      <workItem from="1578949110716" duration="14000" />
     </task>
     <servers />
   </component>
@@ -186,6 +225,12 @@
       </map>
     </option>
   </component>
+  <component name="WindowStateProjectService">
+    <state x="540" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1578035777842">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="540" y="345" key="com.intellij.ide.util.TipDialog/0.34.1920.1046@0.34.1920.1046" timestamp="1578035777842" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -201,7 +246,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/api/models.py</url>
-          <line>44</line>
+          <line>45</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

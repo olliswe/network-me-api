@@ -11,7 +11,6 @@ django-randomslugfield==0.3.0
 django-rest-auth==0.9.5
 django-s3-upload==0.2.1
 djangorestframework==3.9.4
-djangorestframework-jwt==1.11.0
 docutils==0.15.2
 fake-factory==9999.9.9
 Faker==2.0.0

@@ -3,6 +3,8 @@ from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser
 )
 
+#todo add token receiver
+
 
 class Category(models.Model):
     name = models.CharField(default=None,null=True, blank=True,max_length=225,unique=True)
