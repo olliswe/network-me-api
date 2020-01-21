@@ -31,7 +31,7 @@ class UserViewSet(ModelViewSet):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
-        token = Token.objects.create(user=user)
+        token = Token.objects.get(user=user)
 
         return Response(
             {
@@ -48,5 +48,6 @@ def current_user(request):
     """
     Determine the current user by their token, and return their data
     """
+    print(request.user)
     serializer = UserSerializer(request.user)
     return Response(serializer.data)
