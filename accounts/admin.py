@@ -64,3 +64,4 @@ admin.site.register(Category, CategoryAdmin)
 
 # Remove Group Model from admin. We're not using it.
 admin.site.unregister(Group)
+admin.site.site_header = "NetworkMe SL"

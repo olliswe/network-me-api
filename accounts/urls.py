@@ -10,4 +10,5 @@ urlpatterns = [
     url(r"", include(router.urls)),
     url(r"^auth/", include("rest_auth.urls")),
     path("current_user/", current_user),
+    url("/services", include("django.contrib.auth.urls")),
 ]
