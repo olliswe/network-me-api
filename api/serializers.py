@@ -42,6 +42,7 @@ class JobSerializer(ModelSerializer):
             "manually_closed",
             "employer",
             "applications",
+            "slug",
         )
 
 

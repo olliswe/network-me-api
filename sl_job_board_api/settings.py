@@ -105,6 +105,14 @@ DATABASES = {
 }
 
 
+EMAIL_HOST = "smtp.gmail.com"
+# todo add email
+EMAIL_HOST_USER = ""
+EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
+# EMAIL_HOST_PASSWORD = ""
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
