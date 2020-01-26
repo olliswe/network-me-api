@@ -107,7 +107,7 @@ DATABASES = {
 
 EMAIL_HOST = "smtp.gmail.com"
 # todo add email
-EMAIL_HOST_USER = ""
+EMAIL_HOST_USER = "noreply.networkmesl@gmail.com"
 EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
 # EMAIL_HOST_PASSWORD = ""
 EMAIL_PORT = 587
