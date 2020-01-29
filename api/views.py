@@ -17,6 +17,7 @@ from .serializers import (
     GetApplicationSerializer,
     MessageSerializer,
     ViewMessageSerializer,
+    PublicJobSerializer,
 )
 from django.db.models import Count
 import boto3
@@ -145,8 +146,6 @@ def employer_get_application(request, slug=None):
 
 
 @api_view(["GET"])
-@authentication_classes([])
-@permission_classes([])
 def jobseeker_get_job(request, slug=None):
     job = Job.objects.get(slug=slug)
     user_ids = []
@@ -157,6 +156,14 @@ def jobseeker_get_job(request, slug=None):
     else:
         job.applied = False
     serializer = JobSeekerJobSerializer(job, many=False)
+    data = serializer.data
+    return Response(data)
+
+
+@api_view(["GET"])
+def public_get_job(request, slug=None):
+    job = Job.objects.get(slug=slug)
+    serializer = PublicJobSerializer(job, many=False)
     data = serializer.data
     return Response(data)
 

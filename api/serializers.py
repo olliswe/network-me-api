@@ -46,6 +46,21 @@ class JobSerializer(ModelSerializer):
         )
 
 
+class PublicJobSerializer(ModelSerializer):
+    class Meta:
+        model = Job
+        fields = (
+            "id",
+            "post_date",
+            "deadline",
+            "title",
+            "description",
+            "manually_closed",
+            "employer",
+            "slug",
+        )
+
+
 class ApplicationJobSerializer(ModelSerializer):
     employer = UserSerializer()
     deadline = ReadOnlyField(source="format_deadline")
