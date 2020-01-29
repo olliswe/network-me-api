@@ -1,7 +1,11 @@
 from rest_framework import viewsets
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework.decorators import api_view
+from rest_framework.decorators import (
+    api_view,
+    authentication_classes,
+    permission_classes,
+)
 from django.shortcuts import get_object_or_404
 from rest_framework import filters, generics
 from .models import Job, Application, ApplicationAttachment, Message
@@ -141,6 +145,8 @@ def employer_get_application(request, slug=None):
 
 
 @api_view(["GET"])
+@authentication_classes([])
+@permission_classes([])
 def jobseeker_get_job(request, slug=None):
     job = Job.objects.get(slug=slug)
     user_ids = []
