@@ -47,6 +47,12 @@ class JobSerializer(ModelSerializer):
 
 
 class PublicJobSerializer(ModelSerializer):
+    employer = UserSerializer()
+    timesince_post = ReadOnlyField(source="get_timesince_post")
+    deadline = ReadOnlyField(source="format_deadline")
+    timeuntil_deadline = ReadOnlyField(source="get_time_until_deadline")
+    closed = ReadOnlyField(source="is_closed")
+
     class Meta:
         model = Job
         fields = (
@@ -58,6 +64,10 @@ class PublicJobSerializer(ModelSerializer):
             "manually_closed",
             "employer",
             "slug",
+            "timesince_post",
+            "deadline",
+            "timeuntil_deadline",
+            "closed",
         )
 
 
