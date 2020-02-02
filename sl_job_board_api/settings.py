@@ -164,6 +164,10 @@ REST_FRAMEWORK = {
     ]
 }
 
+LOGOUT_ON_PASSWORD_CHANGE = False
+
+OLD_PASSWORD_FIELD_ENABLED = True
+
 
 import django_heroku
 

@@ -33,6 +33,7 @@ class UserSerializer(serializers.ModelSerializer):
         return user
 
     def update(self, instance, validated_data):
+        print(validated_data)
         instance.email = validated_data.get("email", instance.email)
         instance.first_name = validated_data.get("first_name", instance.first_name)
         instance.last_name = validated_data.get("last_name", instance.last_name)
@@ -40,5 +41,8 @@ class UserSerializer(serializers.ModelSerializer):
             "organization", instance.organization
         )
         instance.category = validated_data.get("category", instance.category)
+        instance.telephone_number = validated_data.get(
+            "telephone_number", instance.telephone_number
+        )
         instance.save()
         return instance
